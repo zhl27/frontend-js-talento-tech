@@ -39,6 +39,14 @@ let miFooter = `
 
     </div>
     </div>
+
+    <a
+      href="https://wa.me/541112345555?text=Hola quiero informacion de su negocio"
+      class="btn-wsp"
+      target="_blank"
+    >
+      <img src="/images/whatsapp-fill.svg" alt="" />
+    </a>
 `
 
 //Selecciono el footer y con innterHTML agrego lo que defini en la variable miFooter

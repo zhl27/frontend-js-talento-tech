@@ -37,8 +37,8 @@ let miHeader = `
                             </thead>
                             <tbody></tbody>
                         </table>
-                        <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
-                        <a href="/template/Carrito.html" class="btn-2">Realizar Compra</a>
+                        <a href="" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                        <a href="" id="realizar-compra" class="btn-2">Realizar Compra</a>
                     </div>
                 </li>
             </ul>
@@ -55,6 +55,9 @@ let miHeader = `
             <a href="#" class="btn-1">Informacion</a>
         </div>
     </div>
+
+    <script src="/js/carrito.js"></script>
 `
 //Selecciono el header y con innerHTML agrego lo que defini en la variable miHeader
 document.querySelector("header").innerHTML = miHeader
+

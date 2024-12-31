@@ -18,35 +18,6 @@
         <h2>Piezas restauradas a la venta</h2>
 
         <div class="product-content">
-            <div>
-                <img src="/images/fotos/bifera29cm.jpg" alt="imagen1">
-                <div class="product-txt">
-                    <h3>bifera 29cm</h3>
-                    <p class="cantidad">En Stock: 100</p>
-                    <p class="precio">$1</p>
-                    <a href="#" class="agregar-carrito btn-2">Agregar al carrito</a>
-                </div>
-            </div>
-
-            <div>
-                <img src="/images/fotos/cacerola18cm.jpg" alt="imagen1">
-                <div class="product-txt">
-                    <h3>cacerola 18cm</h3>
-                    <p class="cantidad">En Stock: 50</p>
-                    <p class="precio">$9</p>
-                    <a href="#" class="agregar-carrito btn-2">Agregar al carrito</a>
-                </div>
-            </div>
-
-            <div>
-                <img src="/images/fotos/paellera30cm.jpg" alt="imagen1">
-                <div class="product-txt">
-                    <h3>paellera 30cm</h3>
-                    <p class="cantidad">En Stock: 60</p>
-                    <p class="precio">$10</p>
-                    <a href="#" class="agregar-carrito btn-2">Agregar al carrito</a>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -56,5 +27,34 @@
 <script src="/js/header.js"></script>
 <script src="/js/footer.js"></script>
 <script src="/js/carrito.js"></script>
+
+<script>
+
+    fetch('/productosLista.json')
+        .then(response => response.json())
+        .then(data => {
+            let productContent = document.querySelector('#lista-1 .product-content'); //Selecciona el elemento del DOM donde se mostrarán los productos.
+                // Iteramos sobre cada producto y agregamos divs a la productContent
+                for (let producto of data) {
+                    let productDiv = document.createElement('div'); //Crea un nuevo div para cada producto.
+                    productDiv.innerHTML = 
+                    `
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                        <div class="product-txt">
+                            <h3>${producto.nombre}</h3>
+                            <p class="cantidad">En Stock: ${producto.stock}</p>
+                            <p class="precio">$${producto.precio}</p>
+                            <a href="javascript:agregarAlCarrito(${data.find(p => p.id === producto.id)});" 
+                                class="agregar-carrito btn-2">Agregar al carrito</a>
+                        </div>
+                    `;
+                    //Una vez que se crea el div con el contenido del producto, se agrega a la productContent utilizando el método appendChild del elemento productContent.
+                    productContent.appendChild(productDiv);
+                }
+        });
+
+
+</script>
+
 </body>
 </html>

@@ -77,8 +77,31 @@ header {
   display: block; /* Convierte los enlaces en bloques */
 }
 
-#menu {
+/* Establece estilos para elementos con la clase '.submenu' */
+.submenu {
+  position: relative; /* Establece la posición relativa */
+}
+
+/* Establece estilos para el elemento con el ID 'carrito' dentro de '.submenu' */
+.submenu #carrito {
   display: none; /* Oculta el elemento */
+}
+
+/* Establece estilos cuando se pasa el ratón por encima de '.submenu #carrito' */
+.submenu:hover #carrito {
+  display: block; /* Muestra el elemento */
+  position: absolute; /* Establece la posición absoluta */
+  right: 0; /* Coloca el elemento a la derecha */
+  backdrop-filter: blur(10px); /* Aplica un filtro de desenfoque */
+  top: 100%; /* Coloca el elemento debajo */
+  z-index: 1; /* Establece el índice z para la superposición */
+  background-color: #4e485076; /* Establece el color de fondo */
+  padding: 20px; /* Añade relleno */
+  min-width: 400px; /* Establece el ancho mínimo */
+}
+
+#menu {
+  display: none; /* Oculta el elemento para los que no son tipo mobile*/
 }
 
 .menu-icono {
@@ -332,6 +355,16 @@ td {
   margin-bottom: 20px;
 }
 
+.contacto {
+  display: flex; /* Utiliza el modelo de caja flexible */
+  justify-content: space-around; /* Distribuye uniformemente los elementos secundarios */
+  align-items: center; /* Centra verticalmente los elementos secundarios */
+}
+
+#clima p {
+  color:rgba(255, 255, 255, 0.897)
+}
+
 .btn-field {
   width: 100%;
   display: flex;
@@ -559,6 +592,8 @@ form, table {
   #menu:checked ~ .navbar {
     display: initial; /* Muestra la barra de navegación */
   }
+
+
 
   /* Oculta el logo */
   .logo {

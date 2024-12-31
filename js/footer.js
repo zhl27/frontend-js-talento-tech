@@ -58,6 +58,16 @@ let miFooter = `
 //Selecciono el footer y con innterHTML agrego lo que defini en la variable miFooter
 document.querySelector("footer").innerHTML = miFooter
 
-var script = document.createElement('script');
-script.src = '/js/fetchClima.js';
-document.body.appendChild(script);
+// ejecutar script de clima
+fetch("https://api.open-meteo.com/v1/forecast?latitude=-34.603851&longitude=-58.381775&current=temperature_2m,wind_speed_10m,precipitation")
+    .then(response => response.json())
+    .then(data => {
+        let weatherInfo = document.getElementById("weather-info");
+        weatherInfo.innerHTML = `
+            <p><u>Temperatura actual</u>: ${data.current.temperature_2m}°C</p>
+            <p><u>Velocidad del viento</u>: ${data.current.wind_speed_10m} km/h</p>
+            <p><u>Llueve</u>: ${data.current.precipitation ? "Sí" : "No"}</p>
+        `
+    });
+
+

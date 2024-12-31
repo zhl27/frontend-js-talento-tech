@@ -1,3 +1,4 @@
+
 // Funcion que agrega un producto al carrito
 // - Recibe el objeto producto (id, nombre, imagen, stock, precio)
 // - Verifica si el producto ya esta en el carrito
@@ -15,6 +16,7 @@ const agregarAlCarrito = (producto) => {
     }
     localStorage.setItem('carrito', JSON.stringify(carrito)); // guardo el carrito en el localStorage
     actualizarCarritoUI();
+    alert("Producto agregado al carrito");
 }
 
 // Funcion que devuelve el carrito actual desde el localStorage
@@ -71,7 +73,12 @@ const actualizarCarritoUI = () => {
 }
 
 // darle funcionalidad al boton para vaciar el carrito
-document.querySelector('#vaciar-carrito').addEventListener('click', vaciarCarrito);
+document.querySelector('#vaciar-carrito').addEventListener('click', () => {
+    if(confirm("Seguro que desea vaciar el carrito?")){
+        vaciarCarrito();
+        alert("Carrito vaciado");
+    }
+});
 
 // darle funcionalidad a las cruces individuales de los productos en el carrito.
 document.querySelectorAll('.borrar-producto').forEach(boton => {
@@ -90,3 +97,5 @@ document.querySelector('#realizar-compra').addEventListener('click', () => {
 
 // Inicializar la UI del carrito al cargar la página
 document.addEventListener('DOMContentLoaded', actualizarCarritoUI);
+
+export { agregarAlCarrito };

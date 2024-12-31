@@ -1,5 +1,4 @@
-//Crear una variable miHeader 
-
+// import * as carrito from './carrito_compras.js';
 
 let miHeader = `
     <div class="menu container">
@@ -37,8 +36,10 @@ let miHeader = `
                             </thead>
                             <tbody></tbody>
                         </table>
-                        <a href="" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
-                        <a href="" id="realizar-compra" class="btn-2">Realizar Compra</a>
+                        <div> 
+                            <a href="" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                            <a href="" id="realizar-compra" class="btn-2">Realizar Compra</a>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -56,7 +57,6 @@ let miHeader = `
         </div>
     </div>
 
-    <script src="/js/carrito.js"></script>
 `
 //Selecciono el header y con innerHTML agrego lo que defini en la variable miHeader
 document.querySelector("header").innerHTML = miHeader

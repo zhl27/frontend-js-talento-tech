@@ -1,4 +1,3 @@
-
 // Funcion que agrega un producto al carrito
 // - Recibe el objeto producto (id, nombre, imagen, stock, precio)
 // - Verifica si el producto ya esta en el carrito
@@ -66,7 +65,14 @@ const actualizarCarritoUI = () => {
             <td>${producto.nombre}</td>
             <td>${producto.precio}</td>
             <td>${producto.cantidad}</td>
-            <td><a href="#" class="borrar-producto" data-id="${producto.id}">X</a></td>
+            <td>
+                <div class="borrar-producto" data-id="${producto.id}">
+                    <a class="icon">
+                        <img src="/images/close.png" alt="icono borrar producto">
+                    </a>
+                </div>    
+            
+            </td>
         `;
         listaCarrito.appendChild(row);
     });
@@ -92,10 +98,13 @@ document.querySelectorAll('.borrar-producto').forEach(boton => {
 document.querySelector('#realizar-compra').addEventListener('click', () => {
     alert("Compra realizada con éxito");
     vaciarCarrito();
-
 })
 
-// Inicializar la UI del carrito al cargar la página
-document.addEventListener('DOMContentLoaded', actualizarCarritoUI);
+// Actualizar productos en stock guardados en productosLista.json (simulación de API externa)
+const actualizarStock = (productos) => {
+    return;
+}
+
+actualizarCarritoUI();
 
 export { agregarAlCarrito };

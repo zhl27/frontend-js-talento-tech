@@ -31,6 +31,7 @@ let miHeader = `
                                     <th>Imagen</th>
                                     <th>Nombre</th>
                                     <th>Precio</th>
+                                    <th>Unidades</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -61,3 +62,6 @@ let miHeader = `
 //Selecciono el header y con innerHTML agrego lo que defini en la variable miHeader
 document.querySelector("header").innerHTML = miHeader
 
+import('./carrito_compras.js');
+
+actualizarCarritoUI();

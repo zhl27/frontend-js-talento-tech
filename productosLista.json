@@ -36,13 +36,6 @@
     },
     {
         "id":4,
-        "nombre": "cacerola 18cm",
-        "imagen": "/images/fotos/cacerola18cm.jpg",
-        "stock": 90,
-        "precio": 9000
-    }, 
-    {
-        "id":5,
         "nombre": "flip", 
         "imagen": "/images/fotos/flip.jpg",
         "stock": 100,

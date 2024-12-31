@@ -1,6 +1,5 @@
 import { agregarAlCarrito } from './carrito_compras.js';
 
-
 function actualizarProductos() {
     fetch('/productosLista.json')
     .then(response => response.json())
@@ -9,6 +8,7 @@ function actualizarProductos() {
             // Iteramos sobre cada producto y agregamos divs a la productContent
             for (let producto of data) {
                 let productDiv = document.createElement('div'); //Crea un nuevo div para cada producto.
+                productDiv.classList.add('product-card');
                 productDiv.innerHTML = 
                 `
                     <img src="${producto.imagen}" alt="${producto.nombre}">
@@ -32,4 +32,4 @@ function actualizarProductos() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', actualizarProductos);
+actualizarProductos();

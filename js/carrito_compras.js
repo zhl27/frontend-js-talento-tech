@@ -67,9 +67,7 @@ const actualizarCarritoUI = () => {
             <td>${producto.cantidad}</td>
             <td>
                 <div class="borrar-producto" data-id="${producto.id}">
-                    <a class="icon">
-                        <img src="/images/close.png" alt="icono borrar producto">
-                    </a>
+                    <img src="/images/close.png" alt="icono borrar producto">
                 </div>    
             
             </td>
@@ -88,9 +86,9 @@ document.querySelector('#vaciar-carrito').addEventListener('click', () => {
 
 // darle funcionalidad a las cruces individuales de los productos en el carrito.
 document.querySelectorAll('.borrar-producto').forEach(boton => {
-    boton.addEventListener('click', (e) => {
-        e.preventDefault();
+    boton.addEventListener('click', () => {
         eliminarDelCarrito(parseInt(boton.getAttribute('data-id')));
+        alert("Producto eliminado del carrito");
     });
 });
 

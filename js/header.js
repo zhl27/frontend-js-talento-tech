@@ -38,8 +38,8 @@ let miHeader = `
                             <tbody></tbody>
                         </table>
                         <div> 
-                            <a href="" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
-                            <a href="" id="realizar-compra" class="btn-2">Realizar Compra</a>
+                            <a id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                            <a id="realizar-compra" class="btn-2">Realizar Compra</a>
                         </div>
                     </div>
                 </li>

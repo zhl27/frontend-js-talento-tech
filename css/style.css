@@ -89,11 +89,12 @@ header {
 }
 
 .submenu #carrito table {
-  border-collapse: collapse;
+  border-collapse: separate;
   text-align: center;
-  margin: 10px;
+  margin: 5px;
   text-wrap: pretty;
-  border-spacing: 20px;
+  border-spacing: 1rem;
+  padding: 1rem;
 }
 
 .submenu #carrito > div {
@@ -102,13 +103,31 @@ header {
 }
 
 
+
 .borrar-producto {
   cursor: pointer;
-  width: 1em;
-  height: 1em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 1rem;
+  border-radius: 50%;
+}
+
+.borrar-producto:hover {
   background-color: #f5f5f5;
-  /* display: flex; */
-  margin: 20px;
+}
+
+.borrar-producto:active {
+  background-color: #999;
+}
+
+.borrar-producto img {
+  display:flex;
+  align-self: center;
+  width: 50%;
+  height: 50%;
 }
 
 /* Establece estilos cuando se pasa el ratón por encima de '.submenu #carrito' */
@@ -189,17 +208,24 @@ td {
 }
 
 .btn-2 {
+  cursor: pointer;
   display: inline-block; /* Convierte el elemento en un bloque en línea */
   background-color: #111111; /* Establece el color de fondo */
   color: #ffffff; /* Establece el color del texto */
   border-radius: 5px; /* Establece el radio de borde */
   padding: 7px 18px; /* Añade relleno */
   font-size: 15px; /* Establece el tamaño de fuente */
+  transition: transform 0.1s ease-in-out;
 }
+
 .btn-2:hover {
-  transition: all 0.1s ease-in-out;
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-2:hover:active {
+  transform: scale(1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Adjust shadow when active */
 }
 
 .ofert {
@@ -676,11 +702,6 @@ form, table {
       1fr
     ); /* Crea una cuadrícula de una sola columna */
     gap: 30px; /* Añade espacio entre las columnas */
-  }
-
-  .product img {
-    width: 200px; /* Establece el ancho de la imagen */
-    height: 280px; /* Establece la altura de la imagen */
   }
 
   /* Establece estilos para el contenedor de íconos cuando el ancho de la ventana es menor o igual a 991px */

@@ -66,15 +66,22 @@ const actualizarCarritoUI = () => {
             <td>${producto.precio}</td>
             <td>${producto.cantidad}</td>
             <td>
-                <div class="borrar-producto" data-id="${producto.id}">
+                <div class="borrar-producto">
                     <img src="/images/close.png" alt="icono borrar producto">
                 </div>    
             
             </td>
         `;
         listaCarrito.appendChild(row);
+
+        row.querySelector('.borrar-producto').addEventListener('click', () => {
+            eliminarDelCarrito(producto.id);
+            alert("Producto eliminado del carrito");
+        });
     });
+
 }
+
 
 // darle funcionalidad al boton para vaciar el carrito
 document.querySelector('#vaciar-carrito').addEventListener('click', () => {
@@ -82,14 +89,6 @@ document.querySelector('#vaciar-carrito').addEventListener('click', () => {
         vaciarCarrito();
         alert("Carrito vaciado");
     }
-});
-
-// darle funcionalidad a las cruces individuales de los productos en el carrito.
-document.querySelectorAll('.borrar-producto').forEach(boton => {
-    boton.addEventListener('click', () => {
-        eliminarDelCarrito(parseInt(boton.getAttribute('data-id')));
-        alert("Producto eliminado del carrito");
-    });
 });
 
 // simulación de compra

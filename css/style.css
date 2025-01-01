@@ -207,6 +207,11 @@ td {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+.btn-1:hover:active {
+  transform: scale(1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Adjust shadow when active */
+}
+
 .btn-2 {
   cursor: pointer;
   display: inline-block; /* Convierte el elemento en un bloque en línea */
